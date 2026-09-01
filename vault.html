@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="The full MoneyTrainDomains private vault — 18 aged, high-authority domains across every vertical. Click any domain to preview its premium landing page." />
+<title>The Full Vault · MoneyTrainDomains</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500;1,9..144,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#0A0806; --bg-2:#100C09; --bg-3:#14100C;
+  --surface:rgba(255,245,228,0.045); --surface-2:rgba(255,245,228,0.07);
+  --line:rgba(255,238,210,0.12); --line-strong:rgba(255,238,210,0.2);
+  --ink:#FBF5E7; --ink-mute:#C8BEA9; --ink-dim:#8A7E66;
+  --gold:#E4BC7E; --gold-2:#F5D9A6; --gold-3:#C89959;
+  --gold-soft:rgba(228,188,126,0.14); --bronze:#C08A4F;
+  --serif:'Fraunces','Cormorant Garamond',serif;
+  --sans:'Inter',-apple-system,sans-serif;
+  --mono:'JetBrains Mono',monospace;
+  --container:1280px; --ease:cubic-bezier(.22,.8,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0; font-family:var(--sans);
+  background:
+    radial-gradient(1100px 550px at 12% -8%,rgba(228,188,126,0.04) 0%,transparent 55%),
+    radial-gradient(900px 480px at 95% 25%,rgba(192,138,79,0.03) 0%,transparent 60%),
+    radial-gradient(700px 400px at 50% 80%,rgba(196,157,93,0.025) 0%,transparent 60%),
+    var(--bg);
+  background-attachment:fixed; color:var(--ink);
+  font-size:16px; line-height:1.55;
+  -webkit-font-smoothing:antialiased; overflow-x:hidden; min-height:100vh;
+}
+a{color:inherit;text-decoration:none;}
+button{font-family:inherit;border:0;background:none;color:inherit;cursor:pointer;}
+img,svg{display:block;max-width:100%;}
+p{margin:0;}
+
+/* GRAIN */
+.ambient{pointer-events:none;position:fixed;inset:0;z-index:0;overflow:hidden;}
+.ambient__grain{
+  position:absolute;inset:-50%;width:200%;height:200%;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+  background-size:180px;opacity:0.45;
+}
+
+/* SCROLL PROGRESS */
+.scroll-progress{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--gold-3),var(--gold-2));z-index:999;transition:width .1s linear;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:200;padding:0 2rem;background:rgba(10,8,6,0.88);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);border-bottom:1px solid var(--line);}
+.nav__inner{max-width:var(--container);margin:0 auto;display:flex;align-items:center;gap:2rem;height:68px;}
+.brand{display:flex;align-items:center;gap:0.6rem;text-decoration:none;color:var(--ink);flex-shrink:0;}
+.brand__text{font-family:var(--sans);font-size:0.85rem;font-weight:700;letter-spacing:0.04em;}
+.gold{color:var(--gold);}
+.nav__back{margin-left:auto;display:inline-flex;align-items:center;gap:0.4rem;font-size:0.8rem;font-weight:600;letter-spacing:0.06em;color:var(--ink-dim);border:1px solid var(--line);border-radius:100px;padding:0.45rem 1.1rem;transition:color .2s,border-color .2s;}
+.nav__back:hover{color:var(--gold);border-color:rgba(228,188,126,0.35);}
+
+/* CONTAINER */
+.container{width:100%;max-width:var(--container);margin:0 auto;padding:0 2rem;}
+
+/* HERO */
+.vault-hero{position:relative;z-index:1;padding:5rem 0 3.5rem;text-align:center;border-bottom:1px solid var(--line);}
+.vault-hero__eye{display:inline-flex;align-items:center;gap:0.5rem;font-size:0.72rem;font-weight:600;letter-spacing:0.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:1.5rem;}
+.vault-hero__dot{width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse-dot 2s ease-in-out infinite;}
+@keyframes pulse-dot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.5;transform:scale(1.4);}}
+.vault-hero__title{font-family:var(--serif);font-size:clamp(2.8rem,6vw,5rem);font-weight:400;line-height:1.08;margin:0 0 1.2rem;letter-spacing:-0.02em;}
+.vault-hero__title em{font-style:italic;color:var(--gold);}
+.vault-hero__sub{font-size:clamp(1rem,1.6vw,1.15rem);color:var(--ink-mute);max-width:540px;margin:0 auto 2.5rem;line-height:1.65;}
+.vault-hero__stats{display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;}
+.vault-hero__stat{display:flex;flex-direction:column;align-items:center;gap:0.2rem;}
+.vault-hero__stat strong{font-family:var(--serif);font-size:1.6rem;font-weight:400;color:var(--gold);letter-spacing:-0.02em;}
+.vault-hero__stat span{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);}
+.vault-hero__stat-divider{width:1px;height:36px;background:var(--line-strong);}
+
+/* FILTERS */
+.vault-filters{position:relative;z-index:1;padding:2rem 0 0;}
+.vault-filters__inner{display:flex;align-items:center;gap:0.6rem;flex-wrap:wrap;}
+.vault-filters__label{font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-dim);margin-right:0.4rem;}
+.filter-pill{font-size:0.72rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;padding:0.38rem 0.9rem;border-radius:100px;border:1px solid var(--line);color:var(--ink-dim);background:transparent;cursor:pointer;transition:color .2s,border-color .2s,background .2s;}
+.filter-pill:hover,.filter-pill.is-active{color:var(--gold);border-color:rgba(228,188,126,0.4);background:rgba(228,188,126,0.08);}
+
+/* SECTION */
+.vault-section{position:relative;z-index:1;padding:2.5rem 0 6rem;}
+.vault-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.25rem;}
+.vault-grid__count{grid-column:1/-1;font-size:0.75rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-dim);padding-bottom:0.5rem;border-bottom:1px solid var(--line);margin-bottom:0.25rem;}
+
+/* CARD */
+.domain-card{position:relative;display:flex;flex-direction:column;background:rgba(255,245,228,0.03);border:1px solid rgba(255,238,210,0.09);border-radius:18px;padding:1.6rem 1.8rem 1.4rem;text-decoration:none;color:inherit;overflow:hidden;transition:background .3s var(--ease),border-color .3s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease);animation:card-in .5s var(--ease) both;}
+.domain-card::before{content:'';position:absolute;inset:0;background:radial-gradient(320px 200px at 50% -30%,rgba(228,188,126,0.07) 0%,transparent 60%);opacity:0;transition:opacity .4s;pointer-events:none;}
+.domain-card:hover{background:rgba(228,188,126,0.06);border-color:rgba(228,188,126,0.3);transform:translateY(-5px);box-shadow:0 20px 60px rgba(0,0,0,.5),0 0 0 1px rgba(228,188,126,0.1) inset;}
+.domain-card:hover::before{opacity:1;}
+@keyframes card-in{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.domain-card.is-hidden{display:none;}
+
+.domain-card__head{display:flex;align-items:center;justify-content:space-between;gap:0.6rem;margin-bottom:1rem;}
+.domain-card__vertical{font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink-dim);}
+.da-chip{font-size:0.68rem;font-weight:700;letter-spacing:0.06em;color:var(--gold-3);background:rgba(228,188,126,0.12);border:1px solid rgba(228,188,126,0.22);border-radius:100px;padding:0.2rem 0.65rem;}
+.domain-card__name{font-family:var(--mono);font-size:clamp(.9rem,1.4vw,1.05rem);font-weight:500;color:var(--ink);letter-spacing:-.01em;word-break:break-all;margin-bottom:1.1rem;line-height:1.3;}
+.domain-card__stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.5rem;padding:1rem 0;border-top:1px solid rgba(255,238,210,0.07);border-bottom:1px solid rgba(255,238,210,0.07);margin-bottom:1.1rem;}
+.domain-card__stat{display:flex;flex-direction:column;gap:.22rem;}
+.domain-card__stat-label{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-dim);}
+.domain-card__stat-val{font-size:.88rem;font-weight:700;color:var(--ink);letter-spacing:-.01em;}
+.domain-card__footer{display:flex;align-items:center;justify-content:space-between;margin-top:auto;}
+.domain-card__tag{font-size:.62rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-dim);background:rgba(255,255,255,.04);border:1px solid var(--line);border-radius:100px;padding:.18rem .6rem;}
+.domain-card__cta{font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);opacity:0;transform:translateX(-6px);transition:opacity .25s,transform .25s;}
+.domain-card:hover .domain-card__cta{opacity:1;transform:translateX(0);}
+.domain-card__index{position:absolute;top:1.4rem;right:1.6rem;font-family:var(--serif);font-size:4rem;font-weight:400;color:rgba(228,188,126,0.05);line-height:1;pointer-events:none;transition:color .3s;}
+.domain-card:hover .domain-card__index{color:rgba(228,188,126,0.09);}
+
+/* CTA */
+.vault-cta{position:relative;z-index:1;padding:4rem 0 6rem;text-align:center;border-top:1px solid var(--line);}
+.vault-cta__eyebrow{font-size:.7rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-dim);margin-bottom:1.2rem;}
+.vault-cta__title{font-family:var(--serif);font-size:clamp(1.8rem,3.5vw,3rem);font-weight:400;color:var(--ink);margin:0 0 1rem;letter-spacing:-0.02em;}
+.vault-cta__title em{font-style:italic;color:var(--gold);}
+.vault-cta__sub{color:var(--ink-mute);font-size:1rem;margin:0 0 2.5rem;}
+.btn-gold{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,var(--gold-3),var(--gold));color:#0A0806;font-size:.82rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:.9rem 2.2rem;border-radius:100px;border:none;cursor:pointer;text-decoration:none;transition:opacity .2s,transform .2s;box-shadow:0 8px 30px rgba(228,188,126,0.25);}
+.btn-gold:hover{opacity:.88;transform:translateY(-2px);}
+
+/* FOOTER */
+.vault-footer{position:relative;z-index:1;border-top:1px solid var(--line);padding:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;max-width:var(--container);margin:0 auto;font-size:.75rem;color:var(--ink-dim);}
+
+@media(max-width:640px){
+  .vault-hero{padding:3.5rem 0 2.5rem;}
+  .vault-hero__stats{gap:1.5rem;}
+  .vault-grid{grid-template-columns:1fr;}
+  .domain-card__stats{grid-template-columns:repeat(2,1fr);}
+  .nav__inner{height:58px;}
+}
+</style>
+</head>
+<body>
+
+<div class="ambient" aria-hidden="true"><div class="ambient__grain"></div></div>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="index.html" class="brand">
+      <svg viewBox="0 0 32 24" width="26" height="20" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="6" y="5" width="18" height="11" rx="1.5"/>
+        <rect x="9" y="8" width="4" height="4"/>
+        <rect x="17" y="8" width="4" height="4"/>
+        <path d="M4 16 L26 16"/>
+        <circle cx="11" cy="19" r="2"/>
+        <circle cx="19" cy="19" r="2"/>
+        <path d="M22 5 L24 2 L26 5"/>
+        <path d="M6 8 L4 8"/>
+      </svg>
+      <span class="brand__text"><span class="gold">MoneyTrain</span>Domains</span>
+    </a>
+    <a href="index.html" class="nav__back">← Back to main site</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="vault-hero">
+  <div class="container">
+    <div class="vault-hero__eye">
+      <span class="vault-hero__dot"></span>
+      Private Network · Full Vault Access
+    </div>
+    <h1 class="vault-hero__title">Every domain.<br><em>All in one place.</em></h1>
+    <p class="vault-hero__sub">18 aged, high-authority domains across every major vertical. Click any tile to view its full premium landing page.</p>
+    <div class="vault-hero__stats">
+      <div class="vault-hero__stat"><strong>18</strong><span>Domains Shown</span></div>
+      <div class="vault-hero__stat-divider"></div>
+      <div class="vault-hero__stat"><strong>Avg. DA 64</strong><span>Across Portfolio</span></div>
+      <div class="vault-hero__stat-divider"></div>
+      <div class="vault-hero__stat"><strong>400+</strong><span>Total Network</span></div>
+      <div class="vault-hero__stat-divider"></div>
+      <div class="vault-hero__stat"><strong>Avg. 9 yrs</strong><span>Domain Age</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- FILTERS -->
+<section class="vault-filters">
+  <div class="container">
+    <div class="vault-filters__inner">
+      <span class="vault-filters__label">Filter:</span>
+      <button class="filter-pill is-active" data-filter="all">All</button>
+      <button class="filter-pill" data-filter="marketing">Marketing</button>
+      <button class="filter-pill" data-filter="health">Health</button>
+      <button class="filter-pill" data-filter="tech">Tech · SaaS</button>
+      <button class="filter-pill" data-filter="food">Food</button>
+      <button class="filter-pill" data-filter="finance">Finance</button>
+      <button class="filter-pill" data-filter="lifestyle">Lifestyle</button>
+    </div>
+  </div>
+</section>
+
+<!-- VAULT GRID -->
+<section class="vault-section">
+  <div class="container">
+    <div class="vault-grid" id="vaultGrid">
+      <div class="vault-grid__count" id="gridCount">Showing 18 domains</div>
+
+      <a href="promotionocean.html" target="_blank" class="domain-card" data-category="marketing" style="animation-delay:.04s">
+        <span class="domain-card__index">01</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Marketing · Outreach</span><span class="da-chip">DA 66</span></div>
+        <div class="domain-card__name">promotionocean.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">10 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">64</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.1k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">38k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Marketing</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="bluecollargram.html" target="_blank" class="domain-card" data-category="lifestyle" style="animation-delay:.08s">
+        <span class="domain-card__index">02</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Trades · Blue Collar</span><span class="da-chip">DA 62</span></div>
+        <div class="domain-card__name">bluecollargram.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">8 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">60</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.4k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">29k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Lifestyle</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="clientshowcase.html" target="_blank" class="domain-card" data-category="marketing" style="animation-delay:.12s">
+        <span class="domain-card__index">03</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Portfolio · Agency</span><span class="da-chip">DA 68</span></div>
+        <div class="domain-card__name">clientshowcase.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">11 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">67</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.5k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">44k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Marketing</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="driquality.html" target="_blank" class="domain-card" data-category="health" style="animation-delay:.16s">
+        <span class="domain-card__index">04</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Health · Wellness</span><span class="da-chip">DA 65</span></div>
+        <div class="domain-card__name">driquality.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">9 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">63</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.9k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">35k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Health</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="goptimized.html" target="_blank" class="domain-card" data-category="tech" style="animation-delay:.20s">
+        <span class="domain-card__index">05</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">SEO · Optimisation</span><span class="da-chip">DA 70</span></div>
+        <div class="domain-card__name">goptimized.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">12 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">69</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.7k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">48k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Tech · SaaS</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="grubruns.html" target="_blank" class="domain-card" data-category="food" style="animation-delay:.24s">
+        <span class="domain-card__index">06</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Food · Delivery</span><span class="da-chip">DA 61</span></div>
+        <div class="domain-card__name">grubruns.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">7 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">59</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">1.9k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">23k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Food</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="isynced.html" target="_blank" class="domain-card" data-category="tech" style="animation-delay:.28s">
+        <span class="domain-card__index">07</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">SaaS · Productivity</span><span class="da-chip">DA 67</span></div>
+        <div class="domain-card__name">isynced.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">10 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">65</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.0k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">37k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Tech · SaaS</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="lightsupport.html" target="_blank" class="domain-card" data-category="tech" style="animation-delay:.32s">
+        <span class="domain-card__index">08</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Tech · Support</span><span class="da-chip">DA 63</span></div>
+        <div class="domain-card__name">lightsupport.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">9 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">61</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.2k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">27k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Tech · SaaS</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="loansforlocals.html" target="_blank" class="domain-card" data-category="finance" style="animation-delay:.36s">
+        <span class="domain-card__index">09</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Finance · Local</span><span class="da-chip">DA 64</span></div>
+        <div class="domain-card__name">loansforlocals.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">11 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">62</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.7k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">31k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Finance</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="perfectlover.html" target="_blank" class="domain-card" data-category="lifestyle" style="animation-delay:.40s">
+        <span class="domain-card__index">10</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Lifestyle · Dating</span><span class="da-chip">DA 60</span></div>
+        <div class="domain-card__name">perfectlover.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">8 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">58</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">1.7k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">21k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Lifestyle</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="preventsecure.html" target="_blank" class="domain-card" data-category="tech" style="animation-delay:.44s">
+        <span class="domain-card__index">11</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Cyber · Security</span><span class="da-chip">DA 69</span></div>
+        <div class="domain-card__name">preventsecure.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">13 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">68</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.9k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">46k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Tech · SaaS</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="spellm.html" target="_blank" class="domain-card" data-category="tech" style="animation-delay:.48s">
+        <span class="domain-card__index">12</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">AI · Writing</span><span class="da-chip">DA 64</span></div>
+        <div class="domain-card__name">spellm.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">6 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">62</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.5k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">33k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Tech · SaaS</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="straightoutofcoffee.html" target="_blank" class="domain-card" data-category="food" style="animation-delay:.52s">
+        <span class="domain-card__index">13</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Food · Beverage</span><span class="da-chip">DA 61</span></div>
+        <div class="domain-card__name">straightoutofcoffee.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">9 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">59</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.0k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">25k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Food</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="sturdybirdy.html" target="_blank" class="domain-card" data-category="lifestyle" style="animation-delay:.56s">
+        <span class="domain-card__index">14</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Brand · DTC</span><span class="da-chip">DA 59</span></div>
+        <div class="domain-card__name">sturdybirdy.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">7 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">57</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">1.5k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">18k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Lifestyle</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="supdent.html" target="_blank" class="domain-card" data-category="health" style="animation-delay:.60s">
+        <span class="domain-card__index">15</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Health · Dental</span><span class="da-chip">DA 66</span></div>
+        <div class="domain-card__name">supdent.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">10 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">64</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.0k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">36k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Health</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="veganpowerhouse.html" target="_blank" class="domain-card" data-category="health" style="animation-delay:.64s">
+        <span class="domain-card__index">16</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Vegan · Wellness</span><span class="da-chip">DA 63</span></div>
+        <div class="domain-card__name">veganpowerhouse.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">8 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">61</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.3k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">28k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Health</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="vinocontrol.html" target="_blank" class="domain-card" data-category="lifestyle" style="animation-delay:.68s">
+        <span class="domain-card__index">17</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Wine · Lifestyle</span><span class="da-chip">DA 68</span></div>
+        <div class="domain-card__name">vinocontrol.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">12 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">66</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">3.6k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">43k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Lifestyle</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+      <a href="wakegreat.html" target="_blank" class="domain-card" data-category="lifestyle" style="animation-delay:.72s">
+        <span class="domain-card__index">18</span>
+        <div class="domain-card__head"><span class="domain-card__vertical">Lifestyle · Mindset</span><span class="da-chip">DA 62</span></div>
+        <div class="domain-card__name">wakegreat.com</div>
+        <div class="domain-card__stats">
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Age</span><span class="domain-card__stat-val">9 yrs</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">DR</span><span class="domain-card__stat-val">60</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">RD</span><span class="domain-card__stat-val">2.1k</span></div>
+          <div class="domain-card__stat"><span class="domain-card__stat-label">Traffic</span><span class="domain-card__stat-val">26k/mo</span></div>
+        </div>
+        <div class="domain-card__footer"><span class="domain-card__tag">Lifestyle</span><span class="domain-card__cta">View Domain →</span></div>
+      </a>
+
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="vault-cta">
+  <div class="container">
+    <div class="vault-cta__eyebrow">◆ Private · Selective · Compounding</div>
+    <h2 class="vault-cta__title">Ready to own <em>page one?</em></h2>
+    <p class="vault-cta__sub">We accept a limited number of engagements per quarter. Apply and we'll respond within one business day.</p>
+    <a href="index.html#contact" class="btn-gold">Request Access →</a>
+  </div>
+</section>
+
+<footer>
+  <div class="vault-footer">
+    <span>© 2026 MoneyTrainDomains · All engagements confidential</span>
+    <span>A private network. Invitation by reference.</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var bar=document.getElementById('scrollProgress');
+  window.addEventListener('scroll',function(){
+    var s=window.scrollY/(document.body.scrollHeight-window.innerHeight);
+    bar.style.width=(s*100)+'%';
+  },{passive:true});
+})();
+(function(){
+  var pills=document.querySelectorAll('.filter-pill');
+  var cards=document.querySelectorAll('.domain-card');
+  var countEl=document.getElementById('gridCount');
+  function applyFilter(f){
+    var n=0;
+    cards.forEach(function(c){
+      var show=f==='all'||c.getAttribute('data-category')===f;
+      c.classList.toggle('is-hidden',!show);
+      if(show){n++;c.style.animation='none';void c.offsetWidth;c.style.animation='';}
+    });
+    countEl.textContent='Showing '+n+' domain'+(n!==1?'s':'');
+  }
+  pills.forEach(function(p){
+    p.addEventListener('click',function(){
+      pills.forEach(function(x){x.classList.remove('is-active');});
+      p.classList.add('is-active');
+      applyFilter(p.getAttribute('data-filter'));
+    });
+  });
+})();
+</script>
+</body>
+</html>

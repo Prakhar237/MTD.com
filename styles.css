@@ -1524,8 +1524,12 @@ em {
 /* ==========================================================
    Responsive
 ========================================================== */
+/* ==========================================================
+   TABLET  ≤ 1100px
+========================================================== */
 @media (max-width: 1100px) {
   .nav__links { display: none; }
+  .nav__toggle { display: flex; }
   .hero__panel-grid { grid-template-columns: 1fr; }
   .truth__grid { grid-template-columns: 1fr; }
   .how__steps { grid-template-columns: 1fr; }
@@ -1541,31 +1545,120 @@ em {
   .truth-stat__num { font-size: 72px; }
 }
 
+/* ==========================================================
+   MOBILE  ≤ 700px
+========================================================== */
 @media (max-width: 700px) {
-  .container { padding: 0 20px; }
-  .hero { padding: 60px 0 80px; }
-  .hero__title { font-size: clamp(36px, 10vw, 64px); }
-  .hero__panel-card { padding: 22px; }
-  .hero__panel-title { font-size: 20px; }
-  .hero__cta { flex-direction: column; align-items: stretch; }
-  .hero__cta .btn { width: 100%; }
-  .hero__badges { flex-direction: column; gap: 10px; }
-  .truth, .how, .services, .network, .proof, .faq, .contact { padding: 80px 0; }
-  .truth-stat { padding: 32px 24px; }
-  .service-card { padding: 32px 24px; }
-  .section-head { margin-bottom: 48px; }
-  .section-head__title { font-size: clamp(34px, 8vw, 56px); }
+  /* Prevent horizontal overflow globally */
+  html, body { overflow-x: hidden; }
+
+  /* ── NAV ── */
+  .nav { padding: 0 16px; }
+  .nav__inner {
+    height: 60px;
+    gap: 10px;
+  }
+  /* Shrink brand on mobile so it fits */
+  .brand {
+    font-size: 17px;
+    gap: 7px;
+    flex-shrink: 0;
+  }
+  .brand__mark svg { width: 20px; height: 16px; }
+  /* Show hamburger, hide desktop CTA */
+  .nav__toggle { display: flex; }
+  .nav__cta { display: none; }
+
+  /* ── CONTAINER ── */
+  .container { padding: 0 18px; }
+
+  /* ── HERO ── */
+  .hero { padding: 44px 0 60px; }
+  /* Pill badge — allow wrap but control it */
+  .hero__eye {
+    font-size: 9px;
+    letter-spacing: 0.1em;
+    padding: 7px 13px;
+    gap: 6px;
+    /* Allow the pill to wrap to two lines instead of overflowing */
+    white-space: normal;
+    text-align: left;
+    max-width: calc(100vw - 36px);
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+  /* Hero title — tighter clamp for phones */
+  .hero__title {
+    font-size: clamp(30px, 9vw, 52px);
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+  }
+  .hero__deck {
+    font-size: 15px;
+    margin-bottom: 32px;
+    line-height: 1.6;
+  }
+  .hero__cta {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-bottom: 48px;
+  }
+  .hero__cta .btn { width: 100%; text-align: center; justify-content: center; }
+  .hero__panel-card { padding: 20px 18px; }
+  .hero__panel-title { font-size: 16px; line-height: 1.4; }
+  .hero__panel-item { padding: 12px 0; }
+  .hero__badges {
+    flex-direction: column;
+    gap: 10px;
+    font-size: 12px;
+  }
+
+  /* ── SECTIONS ── */
+  .truth, .how, .services, .network, .proof, .faq, .contact { padding: 60px 0; }
+
+  /* ── TRUTH ── */
+  .truth-stat { padding: 28px 20px; }
+  .truth-stat__num { font-size: 60px; }
+
+  /* ── HOW ── */
+  .how-step { padding: 28px 22px; }
+
+  /* ── SERVICES ── */
+  .service-card { padding: 28px 20px; }
+
+  /* ── NETWORK CARDS ── */
   .network__grid { grid-template-columns: 1fr; }
+  .network-card { padding: 22px 18px; }
+  .network-card__stats { gap: 10px; }
+
+  /* ── SECTION HEADS ── */
+  .section-head { margin-bottom: 40px; }
+  .section-head__title { font-size: clamp(28px, 8vw, 48px); }
+
+  /* ── PROOF ── */
   .proof-card__head { grid-template-columns: 1fr; gap: 20px; }
   .proof__strip { grid-template-columns: 1fr; gap: 20px; padding: 24px 0; }
-  .contact__card { padding: 48px 24px; }
+
+  /* ── CONTACT ── */
+  .contact__card { padding: 40px 20px; }
   .contact__row { grid-template-columns: 1fr; }
+
+  /* ── FOOTER ── */
   .footer__cols { grid-template-columns: 1fr; gap: 24px; }
-  .footer__bottom { font-size: 10px; }
-  .marquee__track { font-size: 24px; gap: 32px; }
-  .marquee__track em { font-size: 18px; }
-  .trust__row { gap: 24px; }
-  .trust__row span { font-size: 14px; }
+  .footer__bottom { font-size: 10px; flex-direction: column; gap: 6px; text-align: center; }
+  .footer__word { font-size: clamp(32px, 12vw, 60px); }
+
+  /* ── MARQUEE ── */
+  .marquee__track { font-size: 22px; gap: 28px; }
+  .marquee__track em { font-size: 17px; }
+
+  /* ── TRUST BAR ── */
+  .trust__row { gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .trust__row span { font-size: 13px; }
+
+  /* ── BUTTONS ── */
+  .btn--xl { font-size: 12px; padding: 14px 22px; }
 }
 
 /* ==========================================================
