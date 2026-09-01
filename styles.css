@@ -449,6 +449,16 @@ em {
 }
 .nav__toggle span { width: 22px; height: 1.5px; background: var(--ink); }
 
+/* The Vault — special gold accent link */
+.nav__vault-link {
+  color: var(--gold) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  opacity: 0.85;
+  transition: opacity 0.2s !important;
+}
+.nav__vault-link:hover { opacity: 1 !important; }
+
 /* ==========================================================
    HERO
 ========================================================== */
@@ -1572,8 +1582,88 @@ em {
   /* ── CONTAINER ── */
   .container { padding: 0 18px; }
 
-  /* ── HERO ── */
-  .hero { padding: 44px 0 60px; }
+  /* ── HERO PANEL CARD ── */
+  .hero__panel-card { padding: 18px 16px; }
+
+  /* Head: stack label+title above the ACTIVE badge */
+  .hero__panel-head {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+  }
+  /* ACTIVE pill: push it left, don't shrink */
+  .hero__panel-live {
+    align-self: flex-start;
+    font-size: 9px;
+    padding: 5px 10px;
+  }
+  .hero__panel-label {
+    font-size: 9px;
+    letter-spacing: 0.16em;
+    /* prevent wrapping on label line */
+    white-space: nowrap;
+  }
+  .hero__panel-title {
+    font-size: 18px;
+    line-height: 1.3;
+  }
+
+  /* Grid: one column on mobile */
+  .hero__panel-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .hero__panel-item {
+    padding: 13px 14px;
+  }
+
+  /* Top row: domain + DA chip */
+  .hero__panel-item-top {
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 6px;
+  }
+  .hero__panel-item-dom {
+    font-size: 12px;
+  }
+
+  /* Meta row: stack text above chip */
+  .hero__panel-item-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+  .hero__panel-item-meta > span:first-child {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  /* Footer: stack on two lines */
+  .hero__panel-foot {
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 14px;
+    font-size: 10px;
+  }
+  .hero__panel-foot-label {
+    line-height: 1.4;
+  }
+
+  /* Chips: a bit smaller on mobile */
+  .chip {
+    font-size: 9px;
+    padding: 3px 8px;
+  }
+
+  /* ── HERO BADGES ── */
+  .hero__badges {
+    gap: 10px;
+    font-size: 12px;
+    margin-top: 28px;
+  }
   /* Pill badge — allow wrap but control it */
   .hero__eye {
     font-size: 9px;
